@@ -7,24 +7,20 @@
 </head>
 <body>
 	<script>
-		function isWechat(){
-			var ua = navigator.userAgent.toLowerCase();
-			if(ua.match(/MicroMessenger/i)=="micromessenger") {
-				return true;
-			} else {
-				return false;
-			}
-		}
 		window.onload = function(){
-			if (!isWechat()) {
+			var isWechat = navigator.userAgent.toLowerCase().indexOf("micromessenger") === -1 ? false : true;
+			if (isWechat) {
 				location.href="https://itunes.apple.com/US/app/id1071976327";
 			} else {
 				var img = document.createElement("img");
 				img.src = "isWechat.jpg";
 				document.body.appendChild(img);
+				document.body.style.background = "#eee";
+				img.style.display = "block";
+				img.style.width = '70%';
 				img.style.position = "absolute";
 				img.style.right = "20px";
-				img.style.top = 0;
+				img.style.top = "5px";
 			}
 		}
 	</script>
