@@ -9,7 +9,7 @@
 	<script>
 		window.onload = function(){
 			var isWechat = navigator.userAgent.toLowerCase().indexOf("micromessenger") === -1 ? false : true;
-			if (isWechat) {
+			if (!isWechat) {
 				location.href="https://itunes.apple.com/US/app/id1071976327";
 			} else {
 				var img = document.createElement("img");
