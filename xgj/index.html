@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title></title>
+</head>
+<body>
+	<script>
+		// 基本设置
+		// title : 网页标题
+		// url : 跳转到下载页面的链接
+		// hint : 提示图片的路径
+		var title = "王国纪元 游戏下载";
+			url = "https://app.appsflyer.com/id1071976327?pid=DOUYU&c=douy.ios.locn.cn.xgjzb.160517",
+			hint = "isWechat.jpg";
+		window.onload = function(){
+			document.title = title;
+			var isWechat = navigator.userAgent.toLowerCase().indexOf("micromessenger") === -1 ? false : true;
+			if (!isWechat) {
+				location.href = url;
+			} else {
+				var img = document.createElement("img");
+				img.src = hint;
+				document.body.appendChild(img);
+				document.body.style.background = "#eee";
+				img.style.display = "block";
+				img.style.width = "70%";
+				img.style.position = "absolute";
+				img.style.right = "20px";
+				img.style.top = "5px";
+			}
+		}
+	</script>
+</body>
+</html>
